@@ -12,5 +12,12 @@ namespace Invoice_TestProject1
             double cost = cab.Ride(10, 5);
             Assert.AreEqual(105, cost);
         }
+        [TestMethod]
+        public void TestForMinFare()
+        {
+            CabRide cab = new CabRide();
+            double cost = cab.Ride(0.3, 1);
+            Assert.AreEqual(5, cost);
+        }
     }
 }
