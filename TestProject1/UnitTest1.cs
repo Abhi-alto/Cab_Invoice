@@ -31,8 +31,24 @@ namespace Invoice_TestProject1
                 new ride(40, 2),
                 new ride(15, 4)
             };
-            double result = cab.ManyRidesSum(faresSum);
-            Assert.AreEqual(865, result);
+            moreDetails result = cab.ManyRidesSum(faresSum);
+            Assert.AreEqual(865, result.TotalFare);
+        }
+        [TestMethod]
+        public void TestMultipleRideFaresDetails()
+        {
+            CabRide cab = new CabRide();
+            List<ride> faresSum = new List<ride>()
+            {
+                new ride(0.3, 1),
+                new ride(10, 1),
+                new ride(20, 3),
+                new ride(40, 2),
+                new ride(15, 4)
+            };
+            moreDetails result = cab.ManyRidesSum(faresSum);
+            Assert.AreEqual(5, result.Tride);
+            Assert.AreEqual(173, result.avg);
         }
     }
 }

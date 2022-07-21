@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 namespace Invoice_Generator
 {
+    public class moreDetails
+    {
+        public int Tride = 0;
+        public double avg = 0;
+        public double TotalFare = 0;
+        public moreDetails(int totRides, double Tfare)
+        {
+            this.Tride = totRides;
+            this.TotalFare = Tfare;
+            avg = TotalFare / Tride;
+        }
+
+    }
     public class ride
     {
         public double km = 0,
@@ -29,7 +42,7 @@ namespace Invoice_Generator
             }
             return min_fare;
         }
-        public double ManyRidesSum(List<ride> multipleRides)
+        public moreDetails ManyRidesSum(List<ride> multipleRides)
         {
             ///Takes input as a List which contains objects of ride class
             ///then each element of this list i.e ride object is passed to Ride class
@@ -39,7 +52,9 @@ namespace Invoice_Generator
             {
                 total += Ride(cost.km, cost.hrs);
             }
-            return total;
+            moreDetails obj = new moreDetails(multipleRides.Count, total);                  //passed to calculate avg cost/ride
+            return obj;
         }
+
     }
 }

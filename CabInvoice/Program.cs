@@ -5,9 +5,11 @@ List<ride> faresSum = new List<ride>()
             {
                 new ride(0.3, 1),
                 new ride(10, 1),
-                new ride(20, 3 ),
+                new ride(20, 3),
                 new ride(40, 2),
                 new ride(15, 4)
             };
-double result = cab.ManyRidesSum(faresSum);
-Console.WriteLine("The sum for multiple rides is = " + result);
+moreDetails result = cab.ManyRidesSum(faresSum);
+Console.WriteLine("The sum for multiple rides is = " + result.TotalFare);
+Console.WriteLine("Total Rides =" + result.Tride);
+Console.WriteLine("Avergae for all Rides =" + result.avg);
